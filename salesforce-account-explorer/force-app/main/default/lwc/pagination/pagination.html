@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-grid slds-grid_align-center slds-p-top_small slds-p-bottom_medium">
+        <lightning-button
+            label="Previous"
+            onclick={handlePrevious}
+            disabled={isPreviousDisabled}
+            class="slds-m-right_small"
+        ></lightning-button>
+        <span class="slds-align-middle slds-m-horizontal_small">{pageIndicator}</span>
+        <lightning-button
+            label="Next"
+            onclick={handleNext}
+            disabled={isNextDisabled}
+            class="slds-m-left_small"
+        ></lightning-button>
+    </div>
+</template>

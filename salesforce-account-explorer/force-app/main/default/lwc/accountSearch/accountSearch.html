@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="Account Explorer" icon-name="standard:account">
+        <div class="slds-p-horizontal_medium">
+            <div class="slds-grid slds-gutters slds-wrap">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input
+                        type="search"
+                        label="Search by name or phone"
+                        placeholder="Search accounts..."
+                        value={searchTerm}
+                        onchange={handleSearchTermChange}
+                    ></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-combobox
+                        label="Industry"
+                        value={selectedIndustry}
+                        options={industryOptions}
+                        onchange={handleIndustryChange}
+                    ></lightning-combobox>
+                </div>
+            </div>
+
+            <template if:true={errorMessage}>
+                <p class="slds-text-color_error slds-m-top_small">{errorMessage}</p>
+            </template>
+
+            <div class="slds-is-relative slds-p-top_small">
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading accounts" size="medium"></lightning-spinner>
+                </template>
+
+                <template if:true={hasResults}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={accounts}
+                        columns={columns}
+                        hide-checkbox-column
+                    ></lightning-datatable>
+
+                    <template if:true={showPagination}>
+                        <c-pagination
+                            current-page={currentPage}
+                            total-pages={totalPages}
+                            onprevious={handlePrevious}
+                            onnext={handleNext}
+                        ></c-pagination>
+                    </template>
+                </template>
+
+                <template if:true={showEmptyState}>
+                    <div class="slds-illustration slds-illustration_small slds-p-around_large slds-text-align_center">
+                        <lightning-icon icon-name="utility:search" size="medium" class="slds-m-bottom_small"></lightning-icon>
+                        <h3 class="slds-text-heading_small">{emptyStateTitle}</h3>
+                        <p class="slds-text-body_regular slds-text-color_weak slds-m-top_x-small">{emptyStateMessage}</p>
+                        <template if:true={hasActiveFilters}>
+                            <lightning-button
+                                label="Clear filters"
+                                onclick={handleClearFilters}
+                                class="slds-m-top_small"
+                            ></lightning-button>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
