@@ -76,7 +76,7 @@ function AccountExplorer() {
       <Table
         columns={columns}
         data={pagedItems}
-        getRowKey={(account) => account.id}
+        getRowKey={(account) => account.phone}
         emptyState={
           <EmptyState
             message={
