@@ -41,8 +41,10 @@ This project has two independent systems. Follow the guide corresponding to each
 
 ---
 
-## Demo
-Click the video.
-[![Ver video demo](https://img.youtube.com/vi/1scBS-cgC1k/0.jpg)](https://www.youtube.com/watch?v=1scBS-cgC1k)
+## 📹 Demo
+
+Click to watch the demo video:
+
+[![Watch the demo](https://img.youtube.com/vi/1scBS-cgC1k/maxresdefault.jpg)](https://www.youtube.com/watch?v=1scBS-cgC1k)
 
 ---
