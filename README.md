@@ -38,3 +38,11 @@ This project has two independent systems. Follow the guide corresponding to each
 
 - **[Salesforce Installation](./salesforce-account-explorer/README.md)** — deployment, permissions, and test data.
 - **[React Installation](./react-account-explorer/README.md)** — dependencies, environment variables, and how to run the app.
+
+---
+
+## Demo
+
+[![Ver video demo](https://img.youtube.com/vi/1scBS-cgC1k/0.jpg)](https://www.youtube.com/watch?v=1scBS-cgC1k)
+
+---
